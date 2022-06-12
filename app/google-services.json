@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1041858248877",
+    "project_id": "daimond-top-up-2774c",
+    "storage_bucket": "daimond-top-up-2774c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1041858248877:android:58eeb5999e28b36e740624",
+        "android_client_info": {
+          "package_name": "com.movies.daimontopup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1041858248877-11fplnvrog7k914a0n0bj0urvq3l6mrp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD70gRZp1oYGUOugtNqjVCAzcyx_eIb_1A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1041858248877-11fplnvrog7k914a0n0bj0urvq3l6mrp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

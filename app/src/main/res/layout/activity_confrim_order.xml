@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#257532"
+    tools:context=".Confrim_Order">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Billing Deteils"
+        android:textAllCaps="false"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+
+        />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Order"
+            android:textSize="25dp"
+            android:padding="5dp"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:textStyle="normal"
+
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+
+            android:layout_marginTop="25dp"
+            >
+            <LinearLayout
+                android:layout_margin="3dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:id="@+id/orderTExtview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="120Daomod 230 BDt"
+                    android:textSize="16sp"
+                    android:padding="2dp"
+                    android:textColor="@color/white"
+                    />
+                <TextView
+                    android:id="@+id/orderplayerid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Player ID"
+                    android:textSize="16dp"
+                    android:padding="2dp"
+                    android:textColor="@color/white"
+                    />
+
+
+            </LinearLayout>
+         <LinearLayout
+             android:layout_width="0dp"
+             android:layout_weight="1"
+             android:orientation="vertical"
+             android:layout_height="wrap_content">
+             <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:gravity="center"
+                 android:text="Sub Total"
+                 android:textSize="22dp"
+                 android:layout_gravity="center"
+                 android:textColor="@color/white"
+
+
+                 />
+
+             <TextView
+                 android:id="@+id/total"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_gravity="center"
+                 android:layout_marginTop="5dp"
+                 android:gravity="center"
+                 android:text="Sub Total"
+                 android:textColor="@color/white"
+                 android:textSize="16dp"
+
+
+                 />
+
+
+         </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            >
+
+            <RadioButton
+                android:id="@+id/bkash"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="bKash"
+                android:textColor="@color/white"
+
+
+
+                />
+            <RadioButton
+                android:id="@+id/nagad"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Nagad"
+                android:textColor="@color/white"
+
+
+
+                />
+            <RadioButton
+                android:id="@+id/roket"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Roket"
+                android:textColor="@color/white"/>
+
+
+
+
+            <RadioButton
+                android:id="@+id/upay"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Upay"
+            android:textColor="@color/white"
+
+
+
+            />
+
+
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="7dp"
+            android:orientation="vertical"
+            android:padding="2dp"
+
+            android:layout_height="wrap_content">
+
+            <TextView
+
+                android:id="@+id/select_all"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="normal"
+                android:text="@string/biksh"
+                android:padding="3dp"
+                android:layout_marginTop="2dp"
+
+
+                />
+            <TextView
+                android:id="@+id/payment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                android:text="You Need Send 90 taka"
+                android:padding="2dp"
+                android:layout_marginTop="2dp"
+
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                android:text="account type"
+                android:padding="2dp"
+                android:layout_marginTop="2dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:text="account Number :01950458291"
+                android:padding="2dp"
+                android:layout_marginTop="2dp"
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="3dp"
+                >
+                <TextView
+                    android:id="@+id/youraccountNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="You Account number "
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+
+                    />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:inputType="number"
+                    android:id="@+id/account_number"
+
+                    android:hint="Enter your Account Number"
+                    />
+
+
+                <TextView
+                    android:id="@+id/tranxjetionid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Transaction Id "
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+
+                    />
+                <EditText
+                    android:id="@+id/transcationId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:hint="xyz"
+
+                    />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter Your Full Name"
+                        android:textColor="@color/white"
+                        android:id="@+id/fullname"
+                        />
+
+                    <EditText
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter Your Phone"
+                        android:textColor="@color/white"
+                        android:inputType="number"
+                        android:id="@+id/phoneNa"
+                        />
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Place order"
+                android:textAllCaps="false"
+                android:id="@+id/placeorde"
+                />
+
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+</ScrollView>

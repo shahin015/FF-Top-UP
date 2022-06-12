@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:orientation="vertical"
+       android:layout_height="match_parent">
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:orientation="vertical"
+           android:layout_height="wrap_content">
+
+
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:textSize="12sp"
+           android:textColor="#ED1111"
+           android:textStyle="normal"
+           android:padding="2dp"
+           android:text="@string/lineone"
+           android:layout_margin="2dp"
+           />
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:textSize="12sp"
+           android:textColor="#000000"
+           android:textStyle="normal"
+           android:padding="2dp"
+           android:text="@string/linetow"
+           android:layout_margin="2dp"
+           />
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:textSize="12sp"
+           android:textColor="#130909"
+           android:textStyle="normal"
+           android:padding="2dp"
+           android:text="@string/linethree"
+           android:layout_margin="2dp"
+           />
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:textSize="12sp"
+           android:textColor="#000000"
+           android:textStyle="normal"
+           android:padding="2dp"
+           android:text="@string/linefour"
+           android:layout_margin="2dp"
+           />
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:textSize="12sp"
+           android:textColor="#03A9F4"
+           android:textStyle="normal"
+           android:padding="2dp"
+           android:text="@string/linefive"
+           android:layout_margin="2dp"
+           />
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:textSize="12sp"
+           android:textColor="#0B0909"
+           android:textStyle="normal"
+           android:padding="2dp"
+           android:text="@string/linesix"
+           android:layout_margin="2dp"
+           />
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:textSize="12sp"
+           android:textColor="#03A9F4"
+           android:textStyle="normal"
+           android:padding="2dp"
+           android:text="@string/lineseven"
+           android:layout_margin="2dp"
+           />
+
+       </LinearLayout>
+
+       <TextView
+           android:layout_gravity="center"
+           android:gravity="center"
+           android:textColor="@color/black"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="লেভেল আপ পাস UID কোড দিয়ে নিচে কিলিক করুন"
+           />
+       <Button
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center"
+           android:hint="Level Up Pass"
+           android:textStyle="normal"
+           android:textColor="#EFE8E8"
+           android:backgroundTint="#9C27B0"
+           android:textAllCaps="false"
+
+           />
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           >
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Selecet Daimod"
+              android:layout_gravity="center"
+               android:textSize="12sp"
+               />
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:weightSum="2"
+               android:layout_margin="1dp"
+               android:padding="1dp"
+               >
+               <TextView
+                   android:clickable="true"
+                   android:clipToOutline="true"
+                   android:id="@+id/tx138"
+                   android:layout_width="0dp"
+                   android:layout_weight="1"
+                   android:padding="1dp"
+                   android:layout_margin="2dp"
+                   android:layout_height="wrap_content"
+                   android:textSize="12sp"
+                   android:background="#009688"
+                   android:text="138 Daimonds"
+                   android:gravity="center"
+                   android:textColor="@color/white"
+
+
+                   />
+
+               <TextView
+                   android:id="@+id/tx288"
+                   android:layout_width="0dp"
+                   android:layout_weight="1"
+                   android:padding="1dp"
+                   android:layout_margin="2dp"
+                   android:layout_height="wrap_content"
+                   android:textSize="12sp"
+                   android:background="#009688"
+                   android:text="288 Daimonds "
+                   android:gravity="center"
+                   android:textColor="@color/white"
+
+
+                   />
+
+
+
+           </LinearLayout>
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:weightSum="2"
+               android:layout_margin="1dp"
+               android:padding="1dp"
+               >
+               <TextView
+                   android:id="@+id/tx426"
+                   android:layout_width="0dp"
+                   android:layout_weight="1"
+                   android:padding="1dp"
+                   android:layout_margin="2dp"
+                   android:layout_height="wrap_content"
+                   android:textSize="12sp"
+                   android:background="#009688"
+                   android:text="426 Daimonds"
+                   android:gravity="center"
+                   android:textColor="@color/white"
+
+
+                   />
+
+               <TextView
+                   android:layout_width="0dp"
+                   android:layout_weight="1"
+                   android:padding="1dp"
+                   android:id="@+id/tx576"
+                   android:layout_margin="2dp"
+                   android:layout_height="wrap_content"
+                   android:textSize="12sp"
+                   android:background="#009688"
+                   android:text="576 Daimonds "
+                   android:gravity="center"
+                   android:textColor="@color/white"
+
+
+                   />
+
+
+
+           </LinearLayout>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:weightSum="2"
+               android:layout_margin="1dp"
+               android:padding="1dp"
+               >
+               <TextView
+                   android:id="@+id/tx732"
+                   android:layout_width="0dp"
+                   android:layout_weight="1"
+                   android:padding="1dp"
+                   android:layout_margin="2dp"
+                   android:layout_height="wrap_content"
+                   android:textSize="12sp"
+                   android:background="#009688"
+                   android:text="732 Daimonds"
+                   android:gravity="center"
+                   android:textColor="@color/white"
+
+
+                   />
+
+               <TextView
+                   android:id="@+id/tx870"
+                   android:layout_width="0dp"
+                   android:layout_weight="1"
+                   android:padding="1dp"
+                   android:layout_margin="2dp"
+                   android:layout_height="wrap_content"
+                   android:textSize="12sp"
+                   android:background="#009688"
+                   android:text="870 Daimonds "
+                   android:gravity="center"
+                   android:textColor="@color/white"
+
+
+                   />
+
+
+
+
+           </LinearLayout>
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:weightSum="2"
+               android:layout_margin="1dp"
+               android:padding="1dp"
+               >
+               <TextView
+                   android:id="@+id/tx1020"
+                   android:layout_width="0dp"
+                   android:layout_weight="1"
+                   android:padding="1dp"
+                   android:layout_margin="2dp"
+                   android:layout_height="wrap_content"
+                   android:textSize="12sp"
+                   android:background="#009688"
+                   android:text="1020 Daimonds"
+                   android:gravity="center"
+                   android:textColor="@color/white"
+
+
+                   />
+
+               <TextView
+                   android:id="@+id/tx1488"
+                   android:layout_width="0dp"
+                   android:layout_weight="1"
+                   android:padding="1dp"
+                   android:layout_margin="2dp"
+                   android:layout_height="wrap_content"
+                   android:textSize="12sp"
+                   android:background="#009688"
+                   android:text="1488 Daimonds "
+                   android:gravity="center"
+                   android:textColor="@color/white"
+
+
+                   />
+
+
+
+
+           </LinearLayout>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:weightSum="2"
+               android:layout_margin="1dp"
+               android:padding="1dp"
+               >
+               <TextView
+                   android:id="@+id/tx3036"
+                   android:layout_width="0dp"
+                   android:layout_weight="1"
+                   android:padding="1dp"
+                   android:layout_margin="2dp"
+                   android:layout_height="wrap_content"
+                   android:textSize="12sp"
+                   android:background="#009688"
+                   android:text="3036 Daimonds"
+                   android:gravity="center"
+                   android:textColor="@color/white"
+
+
+                   />
+
+               <TextView
+                   android:id="@+id/tx6072"
+                   android:layout_width="0dp"
+                   android:layout_weight="1"
+                   android:padding="1dp"
+                   android:layout_margin="2dp"
+                   android:layout_height="wrap_content"
+                   android:textSize="12sp"
+                   android:background="#009688"
+                   android:text="6072 Daimonds "
+                   android:gravity="center"
+                   android:textColor="@color/white"
+
+
+                   />
+
+
+
+
+           </LinearLayout>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:weightSum="2"
+               android:layout_margin="1dp"
+               android:padding="1dp"
+               >
+               <TextView
+                   android:id="@+id/tx9108"
+                   android:layout_width="0dp"
+                   android:layout_weight="1"
+                   android:padding="1dp"
+                   android:layout_margin="2dp"
+                   android:layout_height="wrap_content"
+                   android:textSize="12sp"
+                   android:background="#009688"
+                   android:text="9108 Daimonds"
+                   android:gravity="center"
+                   android:textColor="@color/white"
+
+
+                   />
+
+               <TextView
+                   android:id="@+id/tx12144"
+                   android:layout_width="0dp"
+                   android:layout_weight="1"
+                   android:padding="1dp"
+                   android:layout_margin="2dp"
+                   android:layout_height="wrap_content"
+                   android:textSize="12sp"
+                   android:background="#009688"
+                   android:text="12144 Daimonds "
+                   android:gravity="center"
+                   android:textColor="@color/white"
+
+
+                   />
+
+
+
+
+           </LinearLayout>
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:weightSum="2"
+               android:layout_margin="1dp"
+               android:padding="1dp"
+               >
+               <TextView
+                   android:id="@+id/txweekly"
+                   android:layout_width="0dp"
+                   android:layout_weight="1"
+                   android:padding="1dp"
+                   android:layout_margin="2dp"
+                   android:layout_height="wrap_content"
+                   android:textSize="12sp"
+                   android:background="#009688"
+                   android:text="Weekly"
+                   android:gravity="center"
+                   android:textColor="@color/white"
+
+
+                   />
+
+               <TextView
+                   android:id="@+id/txmonthly"
+                   android:layout_width="0dp"
+                   android:layout_weight="1"
+                   android:padding="1dp"
+                   android:layout_margin="2dp"
+                   android:layout_height="wrap_content"
+                   android:textSize="12sp"
+                   android:background="#009688"
+                   android:text="Monthly "
+                   android:gravity="center"
+                   android:textColor="@color/white"
+
+
+                   />
+
+
+
+
+           </LinearLayout>
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Clear"
+               android:textSize="10dp"
+               android:textColor="#F44336"
+               android:layout_gravity="center"
+               />
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textColor="@color/black"
+               android:text="Select your Daimond"
+               android:layout_gravity="center"
+               android:gravity="center"
+               android:id="@+id/tvtextview"
+               />
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               android:visibility="gone"
+               android:id="@+id/layot"
+               >
+
+
+           <EditText
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:hint="Player ID"
+               android:id="@+id/playerid"
+               android:inputType="number"
+               android:textColor="@color/black"
+
+               />
+
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="10dp"
+               android:orientation="horizontal"
+               android:layout_gravity="center"
+               >
+
+
+               <LinearLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal"
+                   >
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Product Price $ 800x1"
+                       android:textColor="@color/black"
+                       android:padding="1dp"
+                       android:layout_margin="2dp"
+                       android:id="@+id/producitcunt"
+                       />
+                   <TextView
+                       android:id="@+id/total"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Total"
+                       android:layout_gravity="right"
+                       android:textColor="@color/black"
+                       />
+
+               </LinearLayout>
+
+
+
+
+
+
+
+
+           </LinearLayout>
+           </LinearLayout>
+
+
+
+
+       </LinearLayout>
+
+
+       <Button
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="Buy Now "
+           android:textAllCaps="false"
+           android:clickable="false"
+           android:backgroundTint="#EA1A1A"
+           android:textColor="@color/white"
+           android:id="@+id/button"
+           />
+
+
+
+
+
+
+
+
+
+   </LinearLayout>
+</ScrollView>

@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Daimon Top Up</string>
+    <string name="lineone">* আবারও চালু হলো UID টপ আপ, এখন সবাই Player ID কোড দিয়ে টপ-আপ করতে পারবেন । </string>
+    <string name="linetow">* Player ID ভুল দিয়ে ডায়মন্ড না পেলে কতৃপক্ষ দায়ী নয়। </string>
+    <string name="linethree">* ডেলিভারি সময় ৫ থেকে ১০ মিনিট ।</string>
+    <string name="linefour">* bKash,Nagad,Rocket and Upay(শুধু মাত্র সেন্ড মানি করবেন)।</string>
+    <string name="linefive">* অফিস টাইম সকাল ৯ টা হইতে রাত ২ টা( অফিস টাইমের বাহিরে অর্ডার করলে কিছু টা সময় লাগতে পারে।)</string>
+    <string name="linesix">* মোবাইলের রিচার্জ গহন যোগ্য নয় </string>
+    <string name="lineseven">* ফেসবুক পেইজ Skill Builder  </string>
+    <string name="biksh"> 01.GO to your bKash app or Dial *247# \n 02.Choose "Send Money"
+        \n 03.Enter below Bkash Account Number \n 04.Now Enter Total amount \n 05.Now enter your bKash PIN to confram the transaction
+    \n 07.Copy Transaction ID from paymnet confrimation and pest the transction ID below</string>
+
+
+    <string name="nagad"> 01.GO to your Nagad app or Dial *167# \n 02.Choose "Send Money"
+        \n 03.Enter below Nagad Number \n 04.Now Enter Total amount \n 05.Now enter your bKash PIN to confram the transaction
+    \n 07.Copy Transaction ID from paymnet confrimation and pest the transction ID below</string>
+
+
+    <string name="roket"> 01.GO to your Roket app or Dial *322# \n 02.Choose "Send Money"
+        \n 03.Enter below Roket Number \n 04.Now Enter Total amount \n 05.Now enter your bKash PIN to confram the transaction
+    \n 07.Copy Transaction ID from paymnet confrimation and pest the transction ID below</string>
+    <string name="upay"> 01.GO to your Upay app or Dial *268# \n 02.Choose "Send Money"
+        \n 03.Enter below Nagad Number \n 04.Now Enter Total amount \n 05.Now enter your bKash PIN to confram the transaction
+    \n 07.Copy Transaction ID from paymnet confrimation and pest the transction ID below </string>
+</resources>
