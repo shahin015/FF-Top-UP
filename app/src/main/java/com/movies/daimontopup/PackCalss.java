@@ -1,4 +1,4 @@
-package com.movies.toupadmin;
+package com.movies.daimontopup;
 
 public class PackCalss {
     String taka,maindaimond,bonas,totaldaimond;

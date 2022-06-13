@@ -1,7 +1,9 @@
 package com.movies.daimontopup;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,12 +13,26 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
     TextView tx138,tx288,tx426,tx576,tx732,tx870,tx1020,tx1488,tx3036,tx6072,tx9108,tx12144,txWeekly,txMonthly,TvtextView,productCount,total;
     Button byunow;
     LinearLayout layout;
     String daimond,totaltaka;
     EditText playerId;
+
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
+    ProgressDialog progressDialog;
+    PackCalss packCalss;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +60,18 @@ public class MainActivity extends AppCompatActivity {
         playerId=findViewById(R.id.playerid);
         byunow.setClickable(false);
 
+        progressDialog=new ProgressDialog(this);
+        packCalss=new PackCalss();
+
+
+
+        List<PackCalss>list=new ArrayList<>();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference("pack");
+
+
+
+
 
 
 
@@ -61,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-                Toast.makeText(MainActivity.this, daimond, Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(MainActivity.this, daimond, Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(MainActivity.this,Confrim_Order.class);
                 intent.putExtra("id",payer);
                 intent.putExtra("daimond",daimond);
@@ -75,13 +103,45 @@ public class MainActivity extends AppCompatActivity {
         tx138.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String taka="90";
-                String daimon="138";
-                String bonas="23";
-                String main="115";
-                hisab(main,bonas,daimon,taka);
-                daimond=daimon;
-                totaltaka=taka;
+                String massage=tx138.getText().toString();
+                dailog(massage);
+
+                databaseReference.child("pack 1").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                        String taka=snapshot.child("taka").getValue().toString();
+                        String daimon=snapshot.child("totaldaimond").getValue().toString();
+                        String bonas=snapshot.child("bonas").getValue().toString();;
+                        String main=snapshot.child("maindaimond").getValue().toString();
+                        daimond=daimon;
+                        totaltaka=taka;
+                        hisab(main,bonas,daimon,taka);
+
+
+
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+
+
+                        String taka="90";
+                        String daimon="138";
+                        String bonas="23";
+                        String main="115";
+                        daimond=daimon;
+                        totaltaka=taka;
+                        hisab(main,bonas,daimon,taka);
+                    }
+                });
+                progressDialog.dismiss();
+
+
+
+
             }
         });
 
@@ -89,90 +149,259 @@ public class MainActivity extends AppCompatActivity {
         tx288.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String taka="180";
-                String daimon="288";
-                String bonas="48";
-                String main="240";
-                daimond=daimon;
-                totaltaka=taka;
-                hisab(main,bonas,daimon,taka);
+                databaseReference.child("pack 2").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                        String taka=snapshot.child("taka").getValue().toString();
+                        String daimon=snapshot.child("totaldaimond").getValue().toString();
+                        String bonas=snapshot.child("bonas").getValue().toString();;
+                        String main=snapshot.child("maindaimond").getValue().toString();
+                        daimond=daimon;
+                        totaltaka=taka;
+                        hisab(main,bonas,daimon,taka);
+
+
+
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+
+
+                        String taka="90";
+                        String daimon="138";
+                        String bonas="23";
+                        String main="115";
+                        daimond=daimon;
+                        totaltaka=taka;
+                        hisab(main,bonas,daimon,taka);
+                    }
+                });
             }
         });
 
         tx426.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String taka="270";
-                String daimon="426";
-                String bonas="355";
-                String main="71";
-                daimond=daimon;
-                totaltaka=taka;
-                hisab(main,bonas,daimon,taka);
+
+                databaseReference.child("pack 3").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                        String taka=snapshot.child("taka").getValue().toString();
+                        String daimon=snapshot.child("totaldaimond").getValue().toString();
+                        String bonas=snapshot.child("bonas").getValue().toString();;
+                        String main=snapshot.child("maindaimond").getValue().toString();
+                        daimond=daimon;
+                        totaltaka=taka;
+                        hisab(main,bonas,daimon,taka);
+
+
+
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+
+
+                        String taka="90";
+                        String daimon="138";
+                        String bonas="23";
+                        String main="115";
+                        daimond=daimon;
+                        totaltaka=taka;
+                        hisab(main,bonas,daimon,taka);
+                    }
+                });
             }
         });
 
         tx576.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String taka="360";
-                String daimon="576";
-                String bonas="96";
-                String main="480";
-                daimond=daimon;
-                totaltaka=taka;
-                hisab(main,bonas,daimon,taka);
+                databaseReference.child("pack 4").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                        String taka=snapshot.child("taka").getValue().toString();
+                        String daimon=snapshot.child("totaldaimond").getValue().toString();
+                        String bonas=snapshot.child("bonas").getValue().toString();;
+                        String main=snapshot.child("maindaimond").getValue().toString();
+                        daimond=daimon;
+                        totaltaka=taka;
+                        hisab(main,bonas,daimon,taka);
+
+
+
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+
+
+                        String taka="90";
+                        String daimon="138";
+                        String bonas="23";
+                        String main="115";
+                        daimond=daimon;
+                        totaltaka=taka;
+                        hisab(main,bonas,daimon,taka);
+                    }
+                });
             }
         });
 
         tx732.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String taka="450";
-                String daimon="732";
-                String bonas="122";
-                String main="610";
-                daimond=daimon;
-                totaltaka=taka;
-                hisab(main,bonas,daimon,taka);
+                databaseReference.child("pack 5").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                        String taka=snapshot.child("taka").getValue().toString();
+                        String daimon=snapshot.child("totaldaimond").getValue().toString();
+                        String bonas=snapshot.child("bonas").getValue().toString();;
+                        String main=snapshot.child("maindaimond").getValue().toString();
+                        daimond=daimon;
+                        totaltaka=taka;
+                        hisab(main,bonas,daimon,taka);
+
+
+
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+
+
+                        String taka="90";
+                        String daimon="138";
+                        String bonas="23";
+                        String main="115";
+                        daimond=daimon;
+                        totaltaka=taka;
+                        hisab(main,bonas,daimon,taka);
+                    }
+                });
             }
         });
         tx870.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String taka="540";
-                String daimon="870";
-                String bonas="145";
-                String main="725";
-                daimond=daimon;
-                totaltaka=taka;
-                hisab(main,bonas,daimon,taka);
+                databaseReference.child("pack 6").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                        String taka=snapshot.child("taka").getValue().toString();
+                        String daimon=snapshot.child("totaldaimond").getValue().toString();
+                        String bonas=snapshot.child("bonas").getValue().toString();;
+                        String main=snapshot.child("maindaimond").getValue().toString();
+                        daimond=daimon;
+                        totaltaka=taka;
+                        hisab(main,bonas,daimon,taka);
+
+
+
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+
+
+                        String taka="90";
+                        String daimon="138";
+                        String bonas="23";
+                        String main="115";
+                        daimond=daimon;
+                        totaltaka=taka;
+                        hisab(main,bonas,daimon,taka);
+                    }
+                });
             }
         });
 
         tx1020.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String taka="630";
-                String daimon="1020";
-                String bonas="170";
-                String main="850";
-                daimond=daimon;
-                totaltaka=taka;
-                hisab(main,bonas,daimon,taka);
+                databaseReference.child("pack 7").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                        String taka=snapshot.child("taka").getValue().toString();
+                        String daimon=snapshot.child("totaldaimond").getValue().toString();
+                        String bonas=snapshot.child("bonas").getValue().toString();;
+                        String main=snapshot.child("maindaimond").getValue().toString();
+                        daimond=daimon;
+                        totaltaka=taka;
+                        hisab(main,bonas,daimon,taka);
+
+
+
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+
+
+                        String taka="90";
+                        String daimon="138";
+                        String bonas="23";
+                        String main="115";
+                        daimond=daimon;
+                        totaltaka=taka;
+                        hisab(main,bonas,daimon,taka);
+                    }
+                });
             }
         });
 
         tx1488.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String taka="900";
-                String daimon="1488";
-                String bonas="248";
-                String main="1240";
-                daimond=daimon;
-                totaltaka=taka;
-                hisab(main,bonas,daimon,taka);
+                databaseReference.child("pack 8").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                        String taka=snapshot.child("taka").getValue().toString();
+                        String daimon=snapshot.child("totaldaimond").getValue().toString();
+                        String bonas=snapshot.child("bonas").getValue().toString();;
+                        String main=snapshot.child("maindaimond").getValue().toString();
+                        daimond=daimon;
+                        totaltaka=taka;
+                        hisab(main,bonas,daimon,taka);
+
+
+
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+
+
+                        String taka="90";
+                        String daimon="138";
+                        String bonas="23";
+                        String main="115";
+                        daimond=daimon;
+                        totaltaka=taka;
+                        hisab(main,bonas,daimon,taka);
+                    }
+                });
             }
         });
 
@@ -180,39 +409,111 @@ public class MainActivity extends AppCompatActivity {
         tx3036.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String taka="1800";
-                String daimon="3036";
-                String bonas="506";
-                String main="2530";
-                daimond=daimon;
-                totaltaka=taka;
-                hisab(main,bonas,daimon,taka);
+                databaseReference.child("pack 9").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                        String taka=snapshot.child("taka").getValue().toString();
+                        String daimon=snapshot.child("totaldaimond").getValue().toString();
+                        String bonas=snapshot.child("bonas").getValue().toString();;
+                        String main=snapshot.child("maindaimond").getValue().toString();
+                        daimond=daimon;
+                        totaltaka=taka;
+                        hisab(main,bonas,daimon,taka);
+
+
+
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+
+
+                        String taka="90";
+                        String daimon="138";
+                        String bonas="23";
+                        String main="115";
+                        daimond=daimon;
+                        totaltaka=taka;
+                        hisab(main,bonas,daimon,taka);
+                    }
+                });
             }
         });
 
         tx6072.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String taka="3600";
-                String daimon="6072";
-                String bonas="1012";
-                String main="5060";
-                daimond=daimon;
-                totaltaka=taka;
-                hisab(main,bonas,daimon,taka);
+                databaseReference.child("pack 10").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                        String taka=snapshot.child("taka").getValue().toString();
+                        String daimon=snapshot.child("totaldaimond").getValue().toString();
+                        String bonas=snapshot.child("bonas").getValue().toString();;
+                        String main=snapshot.child("maindaimond").getValue().toString();
+                        daimond=daimon;
+                        totaltaka=taka;
+                        hisab(main,bonas,daimon,taka);
+
+
+
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+
+
+                        String taka="90";
+                        String daimon="138";
+                        String bonas="23";
+                        String main="115";
+                        daimond=daimon;
+                        totaltaka=taka;
+                        hisab(main,bonas,daimon,taka);
+                    }
+                });
             }
         });
 
         tx9108.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String taka="5400";
-                String daimon="9108";
-                String bonas="1518";
-                String main="7590";
-                daimond=daimon;
-                totaltaka=taka;
-                hisab(main,bonas,daimon,taka);
+                databaseReference.child("pack 11").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                        String taka=snapshot.child("taka").getValue().toString();
+                        String daimon=snapshot.child("totaldaimond").getValue().toString();
+                        String bonas=snapshot.child("bonas").getValue().toString();;
+                        String main=snapshot.child("maindaimond").getValue().toString();
+                        daimond=daimon;
+                        totaltaka=taka;
+                        hisab(main,bonas,daimon,taka);
+
+
+
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+
+
+                        String taka="90";
+                        String daimon="138";
+                        String bonas="23";
+                        String main="115";
+                        daimond=daimon;
+                        totaltaka=taka;
+                        hisab(main,bonas,daimon,taka);
+                    }
+                });
             }
         });
 
@@ -220,13 +521,37 @@ public class MainActivity extends AppCompatActivity {
         tx12144.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String taka="7200";
-                String daimon="12144";
-                String bonas="2014";
-                String main="9108";
-                daimond=daimon;
-                totaltaka=taka;
-                hisab(main,bonas,daimon,taka);
+                databaseReference.child("pack 12").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                        String taka=snapshot.child("taka").getValue().toString();
+                        String daimon=snapshot.child("totaldaimond").getValue().toString();
+                        String bonas=snapshot.child("bonas").getValue().toString();;
+                        String main=snapshot.child("maindaimond").getValue().toString();
+                        daimond=daimon;
+                        totaltaka=taka;
+                        hisab(main,bonas,daimon,taka);
+
+
+
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+
+
+                        String taka="90";
+                        String daimon="138";
+                        String bonas="23";
+                        String main="115";
+                        daimond=daimon;
+                        totaltaka=taka;
+                        hisab(main,bonas,daimon,taka);
+                    }
+                });
             }
         });
 
@@ -234,26 +559,74 @@ public class MainActivity extends AppCompatActivity {
         txMonthly.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String taka="800";
-                String daimon="3000";
-                String bonas="100";
-                String main="00";
-                daimond=daimon;
-                totaltaka=taka;
-                hisab(main,bonas,daimon,taka);
+                databaseReference.child("pack 13").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                        String taka=snapshot.child("taka").getValue().toString();
+                        String daimon=snapshot.child("totaldaimond").getValue().toString();
+                        String bonas=snapshot.child("bonas").getValue().toString();;
+                        String main=snapshot.child("maindaimond").getValue().toString();
+                        daimond=daimon;
+                        totaltaka=taka;
+                        hisab(main,bonas,daimon,taka);
+
+
+
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+
+
+                        String taka="90";
+                        String daimon="138";
+                        String bonas="23";
+                        String main="115";
+                        daimond=daimon;
+                        totaltaka=taka;
+                        hisab(main,bonas,daimon,taka);
+                    }
+                });
             }
         });
 
         txWeekly.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String taka="170";
-                String daimon="320";
-                String bonas="56";
-                String main="0";
-                totaltaka=taka;
-                daimond=daimon;
-                hisab(main,bonas,daimon,taka);
+                databaseReference.child("pack 14").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                        String taka=snapshot.child("taka").getValue().toString();
+                        String daimon=snapshot.child("totaldaimond").getValue().toString();
+                        String bonas=snapshot.child("bonas").getValue().toString();;
+                        String main=snapshot.child("maindaimond").getValue().toString();
+                        daimond=daimon;
+                        totaltaka=taka;
+                        hisab(main,bonas,daimon,taka);
+
+
+
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+
+
+                        String taka="90";
+                        String daimon="138";
+                        String bonas="23";
+                        String main="115";
+                        daimond=daimon;
+                        totaltaka=taka;
+                        hisab(main,bonas,daimon,taka);
+                    }
+                });
             }
         });
 
@@ -271,6 +644,14 @@ public class MainActivity extends AppCompatActivity {
         total.setText(taka+" BDT");
 
 
+
+
+    }
+
+    private void dailog(String massage){
+
+        progressDialog.setMessage(massage);
+        progressDialog.show();
 
 
     }

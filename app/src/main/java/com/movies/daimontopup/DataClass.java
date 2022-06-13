@@ -5,9 +5,10 @@ import java.util.Date;
 public class DataClass {
 
     String fullname,phone,playerid,bank,account_no,transctionid;
-    String  order_no;
+    String  order_no,date,colorcode;
 
-    public DataClass(String fullname, String phone, String playerid, String bank, String account_no, String transctionid, String order_no) {
+
+    public DataClass(String fullname, String phone, String playerid, String bank, String account_no, String transctionid, String order_no, String date, String colorcode) {
         this.fullname = fullname;
         this.phone = phone;
         this.playerid = playerid;
@@ -15,17 +16,8 @@ public class DataClass {
         this.account_no = account_no;
         this.transctionid = transctionid;
         this.order_no = order_no;
-    }
-
-    public String getOrder_no() {
-        return order_no;
-    }
-
-    public void setOrder_no(String order_no) {
-        this.order_no = order_no;
-    }
-
-    public DataClass() {
+        this.date = date;
+        this.colorcode = colorcode;
     }
 
     public String getFullname() {
@@ -74,5 +66,32 @@ public class DataClass {
 
     public void setTransctionid(String transctionid) {
         this.transctionid = transctionid;
+    }
+
+    public String getOrder_no() {
+        return order_no;
+    }
+
+    public void setOrder_no(String order_no) {
+        this.order_no = order_no;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getColorcode() {
+        return colorcode;
+    }
+
+    public void setColorcode(String colorcode) {
+        this.colorcode = colorcode;
+    }
+
+    public DataClass() {
     }
 }
