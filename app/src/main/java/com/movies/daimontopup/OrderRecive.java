@@ -3,13 +3,12 @@ package com.movies.daimontopup;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.widget.TextView;
 
 public class OrderRecive extends AppCompatActivity {
-    TextView ordern_number,orderdate,ordertTotal,mehord,mr;
+    TextView ordern_number,orderdate,ordertTotal,mehord,mr,countdown;
     String name,taka,methord,payedrid,orderid,date;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,6 +17,7 @@ public class OrderRecive extends AppCompatActivity {
         orderdate=findViewById(R.id.orderDate);
         ordertTotal=findViewById(R.id.orderTotal);
         mehord=findViewById(R.id.ordermethord);
+        countdown=findViewById(R.id.countdown);
         mr=findViewById(R.id.mr);
         name=getIntent().getStringExtra("name");
         taka=getIntent().getStringExtra("taka");
@@ -32,5 +32,22 @@ public class OrderRecive extends AppCompatActivity {
        mehord.setText(methord);
 
        mr.setText(name+" Thank You, Your Order has been recived ");
+
+
+        new CountDownTimer(300000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                countdown.setText("Your Daimond Will Recive: " + millisUntilFinished / 1000);
+                //here you can have your logic to set text to edittext
+            }
+
+            public void onFinish() {
+                countdown.setText("done!");
+            }
+
+        }.start();
+
+
+
     }
 }

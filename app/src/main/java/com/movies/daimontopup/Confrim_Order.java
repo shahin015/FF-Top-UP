@@ -168,10 +168,172 @@ public class Confrim_Order extends AppCompatActivity {
             Toast.makeText(this, "Fill all The filds", Toast.LENGTH_SHORT).show();
             return;
         }
+        if (account.length()==11 || account.length()==14 || account.length()==12) {
+            if (bank.contains("bkash")){
+                if (trasngationid.length()==10){
 
-        progressDialog.setMessage("Procssing Order");
-        progressDialog.show();
-        DatasendToFirebse(account, trasngationid, full_name, phone, bank, playerid);
+                    if (full_name.length()>=3&&full_name.length()<12){
+
+                        if (phone.length()==11 ||phone.length()==14){
+                            progressDialog.setMessage("Procssing Order");
+                            progressDialog.show();
+                            DatasendToFirebse(account, trasngationid, full_name, phone, bank, playerid);
+
+                        }else {
+
+                            phone_number.setError("Enter Valid Phone NO");
+                            phone_number.requestFocus();
+
+                            return;
+                        }
+
+
+
+
+                    }
+                    else {
+                        fullname.setError("Enter You Full Name ");
+                        fullname.requestFocus();
+
+                        return;
+                    }
+
+
+
+                }
+                else {
+                    transcationId.setError("Enter Valid ID");
+                    transcationId.requestFocus();
+                    return;
+
+                }
+
+            }
+            else  if (bank.contains("Nagad")){
+
+
+                if (trasngationid.length()==8){
+
+                    if (full_name.length()>=3&&full_name.length()<12){
+
+                        if (phone.length()==11 ||phone.length()==14){
+                            progressDialog.setMessage("Procssing Order");
+                            progressDialog.show();
+                            DatasendToFirebse(account, trasngationid, full_name, phone, bank, playerid);
+
+                        }else {
+
+                            phone_number.setError("Enter Valid Phone NO");
+                            phone_number.requestFocus();
+
+                            return;
+                        }
+
+
+
+
+                    }
+                    else {
+                        fullname.setError("Enter You Full Name ");
+                        fullname.requestFocus();
+
+                        return;
+                    }
+
+
+                }
+                else {
+                    transcationId.setError("Enter Valid ID");
+                    transcationId.requestFocus();
+                    return;
+
+                }
+
+            }
+
+            else if (bank.contains("Rocket")){
+
+                if (trasngationid.length()==10){
+
+                    if (full_name.length()>=3&&full_name.length()<12){
+
+                        if (phone.length()==11 ||phone.length()==14){
+                            progressDialog.setMessage("Procssing Order");
+                            progressDialog.show();
+                            DatasendToFirebse(account, trasngationid, full_name, phone, bank, playerid);
+
+                        }else {
+
+                            phone_number.setError("Enter Valid Phone NO");
+                            phone_number.requestFocus();
+
+                            return;
+                        }
+
+
+
+
+                    }
+                    else {
+                        fullname.setError("Enter You Full Name ");
+                        fullname.requestFocus();
+
+                        return;
+                    }
+
+
+                }
+                else {
+                    transcationId.setError("Enter Valid ID");
+                    transcationId.requestFocus();
+                    return;
+
+                }
+            }
+            else if (bank.contains("Upay")){
+
+                Toast.makeText(this, "Upay Coming Soon", Toast.LENGTH_SHORT).show();
+                return;
+//                if (full_name.length()>4&&full_name.length()<12){
+//
+//                    if (phone.length()==11 ||phone.length()==14){
+//                        progressDialog.setMessage("Procssing Order");
+//                        progressDialog.show();
+//                        DatasendToFirebse(account, trasngationid, full_name, phone, bank, playerid);
+//
+//                    }else {
+//
+//                        phone_number.setText("Enter Valid Phone NO");
+//                        phone_number.requestFocus();
+//
+//                        return;
+//                    }
+//
+//
+//
+//
+//                }
+//                else {
+//                    fullname.setError("Enter You Full Name ");
+//                    fullname.requestFocus();
+//
+//                    return;
+//                }
+            }
+        }
+        else {
+            account_nummber.setError("Enter Valid Account Number");
+            account_nummber.requestFocus();
+            return;
+        }
+
+
+
+
+
+
+
+
 
 
     }

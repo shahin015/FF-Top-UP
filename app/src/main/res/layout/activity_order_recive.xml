@@ -155,4 +155,14 @@
 
     </LinearLayout>
 
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/countdown"
+        android:textSize="50dp"
+        android:text="Timer"
+        android:gravity="center"
+        />
+
 </LinearLayout>

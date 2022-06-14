@@ -91,12 +91,21 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
+
+                if (payer.length()>=5 && payer.length()<=12){
+                    Intent intent=new Intent(MainActivity.this,Confrim_Order.class);
+                    intent.putExtra("id",payer);
+                    intent.putExtra("daimond",daimond);
+                    intent.putExtra("taka",totaltaka);
+                    startActivity(intent);
+
+                }else {
+
+                    Toast.makeText(MainActivity.this, "Enter Valid Game UID", Toast.LENGTH_SHORT).show();
+                }
+
               //  Toast.makeText(MainActivity.this, daimond, Toast.LENGTH_SHORT).show();
-                Intent intent=new Intent(MainActivity.this,Confrim_Order.class);
-                intent.putExtra("id",payer);
-                intent.putExtra("daimond",daimond);
-                intent.putExtra("taka",totaltaka);
-                startActivity(intent);
+
 
             }
         });
