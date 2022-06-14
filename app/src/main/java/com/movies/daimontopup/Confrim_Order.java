@@ -16,8 +16,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.messaging.FirebaseMessaging;
+import com.movies.daimontopup.notofaction.FcmNotificationsSender;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -38,9 +43,10 @@ public class Confrim_Order extends AppCompatActivity {
 
     DataClass dataClass;
     String bank = "bKash";
+    String user;
 
     FirebaseDatabase firebaseDatabase;
-    DatabaseReference databaseReference, dbref;
+    DatabaseReference databaseReference,df;
     ProgressDialog progressDialog;
 
 
@@ -75,6 +81,8 @@ public class Confrim_Order extends AppCompatActivity {
 
         // below line is used to get reference for our database.
         databaseReference = firebaseDatabase.getReference("order");
+        df = firebaseDatabase.getReference("adminkey");
+        FirebaseMessaging.getInstance().subscribeToTopic("all");
 
 
         playerid = getIntent().getStringExtra("id");
@@ -190,12 +198,34 @@ public class Confrim_Order extends AppCompatActivity {
         dataClass.setOrder_no(orderno);
         dataClass.setDate(d);
         dataClass.setColorcode("f");
+
         databaseReference.child(orderno).setValue(dataClass).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
+                 user="ePtIaHfERgGm2TS-M4gczP:APA91bHuo6dPLwh7Hxfha1LWdMG2oy17m-jq16YEAotg81eIRhidhGonYjpK8twbfmbsgeZAYNtr4LCun0GuYVgQwxYDtiKxNdxE-2DxfQZjnwtLURDA5paRqu_5HFr6XsKQQKx12znv";
 
+
+                String titile="New Order From";
+                String massage=full_name.toString();
+                df.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                       user =snapshot.getValue().toString();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+                FcmNotificationsSender notificationsSender=new FcmNotificationsSender(user,titile,massage,getApplicationContext(),
+                        Confrim_Order.this);
+                notificationsSender.SendNotifications();
                 progressDialog.dismiss();
                 moveclass();
+
+
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
