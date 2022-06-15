@@ -2,6 +2,7 @@ package com.movies.daimontopup;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,6 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.movies.daimontopup.notofaction.FcmNotificationsSender;
+import com.movies.daimontopup.sqlite.MY_SQliteHelper;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -52,6 +54,7 @@ public class Confrim_Order extends AppCompatActivity {
 
     String account, trasngationid, full_name, phone, orderno, d;
 
+    MY_SQliteHelper my_sQliteHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +76,9 @@ public class Confrim_Order extends AppCompatActivity {
         fullname = findViewById(R.id.fullname);
         phone_number = findViewById(R.id.phoneNa);
         palceorder = findViewById(R.id.placeorde);
+
+        my_sQliteHelper=new MY_SQliteHelper(this);
+        SQLiteDatabase sqLiteDatabase=my_sQliteHelper.getWritableDatabase();
 
         dataClass = new DataClass();
         progressDialog = new ProgressDialog(this);
@@ -343,6 +349,8 @@ public class Confrim_Order extends AppCompatActivity {
         orderno = String.valueOf(ct.getTime());
         Calendar calendar = Calendar.getInstance();
 
+
+
         SimpleDateFormat currentDate = new SimpleDateFormat("dd-MM-yy");
         String date = currentDate.format(calendar.getTime());
         Calendar caFortime = Calendar.getInstance();
@@ -384,6 +392,8 @@ public class Confrim_Order extends AppCompatActivity {
                 FcmNotificationsSender notificationsSender=new FcmNotificationsSender(user,titile,massage,getApplicationContext(),
                         Confrim_Order.this);
                 notificationsSender.SendNotifications();
+
+                qliteData(full_name,phone,playerid,trasngationid,bank,account);
                 progressDialog.dismiss();
                 moveclass();
 
@@ -397,6 +407,18 @@ public class Confrim_Order extends AppCompatActivity {
 
             }
         });
+
+
+    }
+
+    private void qliteData(String full_name, String phone, String playerid, String trasngationid, String bank, String account) {
+
+        long rowid=  my_sQliteHelper.instartData(full_name,phone,playerid,trasngationid,bank,account);
+        if (rowid>0){
+           /// Toast.makeText(MainActivity.this, "Data Save Sucess", Toast.LENGTH_SHORT).show();
+        }else {
+           /// Toast.makeText(MainActivity.this, "Data Not Saved", Toast.LENGTH_SHORT).show();
+        }
 
 
     }
@@ -422,5 +444,9 @@ public class Confrim_Order extends AppCompatActivity {
         yourtransgation.setText("Enter Your " + bank + " Transaction ID");
 
     }
+
+
+
+
 
 }

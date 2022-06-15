@@ -534,6 +534,18 @@
            android:id="@+id/button"
            />
 
+       <Button
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="History "
+           android:textAllCaps="false"
+           android:clickable="false"
+           android:backgroundTint="#EA1A1A"
+           android:textColor="@color/white"
+           android:id="@+id/history_main"
+           android:visibility="gone"
+           />
+
 
 
 
