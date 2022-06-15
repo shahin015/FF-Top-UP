@@ -26,12 +26,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    TextView tx138,tx288,tx426,tx576,tx732,tx870,tx1020,tx1488,tx3036,tx6072,tx9108,tx12144,txWeekly,txMonthly,TvtextView,productCount,total;
+    TextView clear,tx138,tx288,tx426,tx576,tx732,tx870,tx1020,tx1488,tx3036,tx6072,tx9108,tx12144,txWeekly,txMonthly,TvtextView,productCount,total;
     Button byunow,history_main;
     LinearLayout layout;
     String daimond,totaltaka;
     EditText playerId;
-    TextView clear;
+
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        clear = findViewById(R.id.clear);
         tx138=findViewById(R.id.tx138);
         tx288=findViewById(R.id.tx288);
         tx426=findViewById(R.id.tx426);
@@ -87,7 +88,15 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+        clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                Intent intent=new Intent(MainActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
 
         history_main.setOnClickListener(new View.OnClickListener() {
@@ -125,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Enter Valid Game UID", Toast.LENGTH_SHORT).show();
                 }
 
-              //  Toast.makeText(MainActivity.this, daimond, Toast.LENGTH_SHORT).show();
+                //  Toast.makeText(MainActivity.this, daimond, Toast.LENGTH_SHORT).show();
 
 
             }

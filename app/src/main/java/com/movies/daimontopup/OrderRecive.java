@@ -51,7 +51,8 @@ public class OrderRecive extends AppCompatActivity {
         ordertTotal=findViewById(R.id.orderTotal);
         mehord=findViewById(R.id.ordermethord);
         countdown=findViewById(R.id.countdown);
-        download=findViewById(R.id.savePdf);
+
+
 
         mr=findViewById(R.id.mr);
         history=findViewById(R.id.history);

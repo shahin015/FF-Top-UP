@@ -37,7 +37,7 @@ import java.util.Date;
 //        git push -u origin main
 
 public class Confrim_Order extends AppCompatActivity {
-    TextView orderTxtvie, orderPlayerid, total, selecttype, youraccountNo, yourtransgation, payment;
+    TextView typeofid, orderTxtvie, orderPlayerid, total, selecttype, youraccountNo, yourtransgation, payment;
     RadioButton bkash, nagad, roket, upay;
     String playerid, daimond, taka;
     EditText account_nummber, transcationId, fullname, phone_number;
@@ -61,6 +61,8 @@ public class Confrim_Order extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confrim_order);
         orderPlayerid = findViewById(R.id.orderplayerid);
+
+        typeofid = findViewById(R.id.tpyeofid);
         orderTxtvie = findViewById(R.id.orderTExtview);
         total = findViewById(R.id.total);
         bkash = findViewById(R.id.bkash);
@@ -109,6 +111,7 @@ public class Confrim_Order extends AppCompatActivity {
                 upay.setChecked(false);
                 bank = "bkash";
                 setEdittext(bank);
+                typeofid.setText("account type :bkash");
 
 
             }
