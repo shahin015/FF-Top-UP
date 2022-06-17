@@ -1,7 +1,10 @@
 package com.movies.daimontopup;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +17,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -48,7 +53,7 @@ public class Confrim_Order extends AppCompatActivity {
     String user;
 
     FirebaseDatabase firebaseDatabase;
-    DatabaseReference databaseReference,df;
+    DatabaseReference databaseReference,df,databaseRe;
     ProgressDialog progressDialog;
 
 
@@ -56,12 +61,14 @@ public class Confrim_Order extends AppCompatActivity {
 
     MY_SQliteHelper my_sQliteHelper;
 
+    private AdView mAdView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confrim_order);
         orderPlayerid = findViewById(R.id.orderplayerid);
 
+        mAdView = findViewById(R.id.adView);
         typeofid = findViewById(R.id.tpyeofid);
         orderTxtvie = findViewById(R.id.orderTExtview);
         total = findViewById(R.id.total);
@@ -86,11 +93,12 @@ public class Confrim_Order extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
-
         // below line is used to get reference for our database.
         databaseReference = firebaseDatabase.getReference("order");
         df = firebaseDatabase.getReference("adminkey");
         FirebaseMessaging.getInstance().subscribeToTopic("all");
+
+
 
 
         playerid = getIntent().getStringExtra("id");
@@ -101,6 +109,20 @@ public class Confrim_Order extends AppCompatActivity {
         orderPlayerid.setText("Your Player ID IS : " + playerid);
         total.setText("You Have To pay : " + taka + " ৳");
         payment.setText("You need Send " + taka + " BDT");
+
+
+        SharedPreferences ads = getSharedPreferences("ads", MODE_PRIVATE);
+
+        String Ads=ads.getString("ads","");
+        if (Ads.contains("on")){
+
+
+            loadAds();
+
+        }
+
+
+
         bkash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -164,6 +186,22 @@ public class Confrim_Order extends AppCompatActivity {
 
 
     }
+    private void loadAds() {
+
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        mAdView.destroy();
+        super.onBackPressed();
+    }
+
+
 
     private void checkValidition() {
 
@@ -446,10 +484,8 @@ public class Confrim_Order extends AppCompatActivity {
         youraccountNo.setText("Enter Your " + bank + " Account No");
         yourtransgation.setText("Enter Your " + bank + " Transaction ID");
 
+
     }
-
-
-
 
 
 }

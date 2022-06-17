@@ -1,10 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".OrderRecive">
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id">
+    </com.google.android.gms.ads.AdView>
+    <View
+        android:layout_below="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_marginTop="2dp"
+        android:id="@+id/view"
+        android:background="#A50A0A"
+        />
+
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/view"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -218,18 +245,12 @@
 
     </LinearLayout>
 
-
-  <!-- <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/savePdf"
-        android:text="Download Receipt"
-        android:textAllCaps="false"
-
-        />
-
-         -->
+    </LinearLayout>
 
 
 
-</LinearLayout>
+
+
+
+
+</RelativeLayout>

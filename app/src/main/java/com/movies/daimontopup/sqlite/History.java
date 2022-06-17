@@ -9,17 +9,22 @@ import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.movies.daimontopup.R;
 
 public class History extends AppCompatActivity {
 
     MY_SQliteHelper my_sQliteHelper;
     TextView view;
+
+    private AdView mAdView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
         view=findViewById(R.id.textview);
+        mAdView = findViewById(R.id.adView);
         my_sQliteHelper=new MY_SQliteHelper(this);
         SQLiteDatabase sqLiteDatabase=my_sQliteHelper.getWritableDatabase();
         Cursor cursor= my_sQliteHelper.displayalldata();
@@ -28,6 +33,18 @@ public class History extends AppCompatActivity {
             Toast.makeText(History.this, "No Data ", Toast.LENGTH_SHORT).show();
             return;
         }
+
+
+        SharedPreferences ads = getSharedPreferences("ads", MODE_PRIVATE);
+
+        String Ads=ads.getString("ads","");
+        if (Ads.contains("on")){
+
+
+            loadAds();
+
+        }
+
 
         StringBuffer stringBuffer=new StringBuffer();
         while (cursor.moveToNext()){
@@ -52,7 +69,21 @@ public class History extends AppCompatActivity {
     }
 
 
+    private void loadAds() {
+
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+
+
     }
+
+    @Override
+    public void onBackPressed() {
+        mAdView.destroy();
+        super.onBackPressed();
+    }
+}
 
 
 

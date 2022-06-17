@@ -23,4 +23,6 @@
     <string name="upay"> 01.GO to your Upay app or Dial *268# \n 02.Choose "Send Money"
         \n 03.Enter below Nagad Number \n 04.Now Enter Total amount \n 05.Now enter your bKash PIN to confram the transaction
     \n 07.Copy Transaction ID from paymnet confrimation and pest the transction ID below </string>
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="appcatitionID">ca-app-pub-3940256099942544~3347511713</string>
 </resources>

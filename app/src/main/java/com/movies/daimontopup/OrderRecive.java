@@ -27,6 +27,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.movies.daimontopup.sqlite.History;
 
 import java.io.File;
@@ -41,6 +43,7 @@ public class OrderRecive extends AppCompatActivity {
     int pageHeight = 1120;
     int pagewidth = 792;
     Bitmap bmp, scaledbmp;
+    private AdView mAdView;
     private static final int PERMISSION_REQUEST_CODE = 200;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +54,7 @@ public class OrderRecive extends AppCompatActivity {
         ordertTotal=findViewById(R.id.orderTotal);
         mehord=findViewById(R.id.ordermethord);
         countdown=findViewById(R.id.countdown);
+        mAdView = findViewById(R.id.adView);
 
 
 
@@ -68,9 +72,8 @@ public class OrderRecive extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref",MODE_PRIVATE);
         SharedPreferences.Editor myEdit = sharedPreferences.edit();
-        myEdit.putString("id", orderid);
+        myEdit.putString("id","Data");
         myEdit.commit();
-
 
 
 
@@ -79,6 +82,19 @@ public class OrderRecive extends AppCompatActivity {
        mehord.setText(": "+methord);
 
        mr.setText(name+" Thank You, Your Order has been recived ");
+
+
+
+        SharedPreferences ads = getSharedPreferences("ads", MODE_PRIVATE);
+
+        String Ads=ads.getString("ads","");
+        if (Ads.contains("on")){
+
+
+            loadAds();
+
+        }
+
 
 
         new CountDownTimer(300000, 1000) {
@@ -105,27 +121,26 @@ public class OrderRecive extends AppCompatActivity {
 
 
 
-        download.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-                if (checkPermission()) {
-                    generatePDF();
-
-                } else {
-                    requestPermission();
-                }
-
-            }
-        });
-
 
     }
 
 
 
 
+    private void loadAds() {
+
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        mAdView.destroy();
+        super.onBackPressed();
+    }
 
 
 
