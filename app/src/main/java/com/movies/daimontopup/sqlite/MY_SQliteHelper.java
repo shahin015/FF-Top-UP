@@ -110,7 +110,7 @@ public class MY_SQliteHelper extends SQLiteOpenHelper {
    public int deletedata(String id){
         SQLiteDatabase sqLiteDatabase=  this.getWritableDatabase();
 
-       return  sqLiteDatabase.delete(TABLE_NAME,ID+"=?",new String[]{id});
+       return  sqLiteDatabase.delete(TABLE_NAME,ID+" = ?",new String[]{id});
 
     }
 }

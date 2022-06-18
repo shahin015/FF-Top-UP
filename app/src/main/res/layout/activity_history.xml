@@ -24,8 +24,46 @@
         android:background="#A50A0A"
         />
 
-    <ScrollView
+    <LinearLayout
+        android:id="@+id/layout_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/view"
+        android:weightSum="5"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edtext"
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/view"
+            android:hint="Enter Number You went To Delete"
+            android:inputType="number"
+            android:maxLength="2"
+
+
+            />
+
+        <Button
+            android:id="@+id/delete"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view"
+            android:layout_alignParentEnd="true"
+            android:background="@color/white"
+            android:text="Delete"
+            android:textAllCaps="false"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+
+
+
+
+    <ScrollView
+        android:layout_below="@id/layout_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
@@ -38,15 +76,14 @@
         >
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="22sp"
-            android:textColor="@color/black"
-            android:textStyle="normal"
-            android:padding="5dp"
-            android:layout_margin="5dp"
             android:id="@+id/textview"
-            />
+            android:layout_width="318dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="normal" />
 
     </LinearLayout>
 
