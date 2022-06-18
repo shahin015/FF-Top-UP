@@ -36,14 +36,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    TextView clear,tx138,tx288,tx426,tx576,tx732,
+   private TextView clear,tx138,tx288,tx426,tx576,tx732,
             tx870,tx1020,tx1488,tx3036,tx6072,tx9108,
             tx12144,txWeekly,txMonthly,TvtextView,
             productCount,total,lineOne;
-    Button byunow,history_main,levelup;
-    LinearLayout layout;
-    String daimond,totaltaka;
-    EditText playerId;
+  private Button byunow,history_main,levelup,privicypolicy;
+   private LinearLayout layout;
+  private   String daimond,totaltaka;
+  private   EditText playerId;
 
     private AdView mAdView;
     private InterstitialAd mInterstitialAd;
@@ -60,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         clear = findViewById(R.id.clear);
+        privicypolicy=findViewById(R.id.privicy_Policy);
+
         mAdView = findViewById(R.id.adView);
         lineOne=findViewById(R.id.lineOne);
         levelup=findViewById(R.id.levelUp);
@@ -208,6 +210,14 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+        privicypolicy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this,PolicyActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
 
 

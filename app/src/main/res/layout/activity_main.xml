@@ -129,18 +129,40 @@
            android:layout_height="wrap_content"
            android:text="লেভেল আপ পাস UID কোড দিয়ে নিচে কিলিক করুন"
            />
-       <Button
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           >
+           <Button
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_gravity="right"
+               android:text="Level Up Pass"
+               android:textStyle="normal"
+               android:id="@+id/levelUp"
+               android:gravity="start"
+               android:textColor="#EFE8E8"
+               android:backgroundTint="#9C27B0"
+               android:textAllCaps="false"
+
+               />
+           <Button
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:layout_gravity="center"
-           android:hint="Level Up Pass"
+           android:layout_gravity="right"
+           android:text="Privicy Policy"
            android:textStyle="normal"
-           android:id="@+id/levelUp"
+           android:id="@+id/privicy_Policy"
+               android:gravity="left"
            android:textColor="#EFE8E8"
            android:backgroundTint="#9C27B0"
            android:textAllCaps="false"
 
            />
+
+       </LinearLayout>
+
 
        <LinearLayout
            android:layout_width="match_parent"
