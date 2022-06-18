@@ -135,6 +135,7 @@
            android:layout_gravity="center"
            android:hint="Level Up Pass"
            android:textStyle="normal"
+           android:id="@+id/levelUp"
            android:textColor="#EFE8E8"
            android:backgroundTint="#9C27B0"
            android:textAllCaps="false"
@@ -525,8 +526,11 @@
                        android:layout_height="wrap_content"
                        android:text="Product Price $ 800x1"
                        android:textColor="@color/black"
-                       android:padding="1dp"
+
+                       android:gravity="center"
+                       android:layout_gravity="center"
                        android:layout_margin="2dp"
+                       android:padding="1dp"
                        android:id="@+id/producitcunt"
                        />
                    <TextView
@@ -534,7 +538,10 @@
                        android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
                        android:text="Total"
-                       android:layout_gravity="right"
+                       android:layout_margin="2dp"
+                       android:padding="1dp"
+                       android:gravity="center"
+                       android:layout_gravity="center"
                        android:textColor="@color/black"
                        />
 

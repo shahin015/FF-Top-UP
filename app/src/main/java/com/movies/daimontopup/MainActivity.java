@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
             tx870,tx1020,tx1488,tx3036,tx6072,tx9108,
             tx12144,txWeekly,txMonthly,TvtextView,
             productCount,total,lineOne;
-    Button byunow,history_main;
+    Button byunow,history_main,levelup;
     LinearLayout layout;
     String daimond,totaltaka;
     EditText playerId;
@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         clear = findViewById(R.id.clear);
         mAdView = findViewById(R.id.adView);
         lineOne=findViewById(R.id.lineOne);
+        levelup=findViewById(R.id.levelUp);
         tx138=findViewById(R.id.tx138);
         tx288=findViewById(R.id.tx288);
         tx426=findViewById(R.id.tx426);
@@ -211,6 +212,51 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+        levelup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                String massage=levelup.getText().toString();
+                dailog(massage);
+
+
+                databaseReference.child("levelUp").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                        String taka=snapshot.child("taka").getValue().toString();
+                        String daimon=snapshot.child("totaldaimond").getValue().toString();
+                        String bonas=snapshot.child("bonas").getValue().toString();;
+                        String main=snapshot.child("maindaimond").getValue().toString();
+                        daimond=daimon;
+                        totaltaka=taka;
+                        hisab(main,bonas,daimon,taka);
+
+
+
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+
+
+                        String taka="90";
+                        String daimon="138";
+                        String bonas="23";
+                        String main="115";
+                        daimond=daimon;
+                        totaltaka=taka;
+                        hisab(main,bonas,daimon,taka);
+                    }
+                });
+
+
+
+            }
+        });
 
 
         clear.setOnClickListener(new View.OnClickListener() {
